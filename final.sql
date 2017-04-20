@@ -1,9 +1,9 @@
 DROP TABLE IF EXISTS `STUDENT`;
 CREATE TABLE `STUDENT` (
-    `StudentID` int(11) NOT NULL AUTO_INCREMENT,
     `FirstName` varchar(255) DEFAULT NULL,
     `LastName` varchar(255) DEFAULT NULL,
     `Major` varchar(255) DEFAULT NULL,
+    `StudentID` int(11) NOT NULL AUTO_INCREMENT,
     PRIMARY KEY (`StudentID`)
 ) ENGINE=InnoDB;
 
@@ -47,12 +47,12 @@ CREATE TABLE `ENROLLMENT` (
 
 DROP TABLE IF EXISTS `COURSE`;
 CREATE TABLE `COURSE` (
-    `CourseID` int(11) NOT NULL UNIQUE AUTO_INCREMENT,
-    `CourseNumber` int(11) NOT NULL,
     `Department` varchar(255) NOT NULL,
+    `CourseNumber` int(11) NOT NULL,
     `CourseName` varchar(255) NOT NULL,
     `Term` varchar(255) NOT NULL,
     `Year` int(5) NOT NULL,
+    `CourseID` int(11) NOT NULL UNIQUE AUTO_INCREMENT,
     PRIMARY KEY(`CourseID`)
 ) ENGINE=InnoDB;
 
@@ -167,3 +167,9 @@ INSERT INTO `SCORE` VALUES(1234, 30, 85);
 INSERT INTO `SCORE` VALUES(1234, 40, 95);
 INSERT INTO `SCORE` VALUES(5337, 26, 78);
 
+-- Number 4, get average
+-- select a.AssignmentID, s.POINTS, s.AssignmentID from ASSIGNMENT a, SCORE s where a.AssignmentID=2 AND s.AssignmentID=a.AssignmentID;
+-- select a.AssignmentID, avg(s.POINTS), max(s.POINTS), min(s.POINTS) from ASSIGNMENT a, SCORE s where a.AssignmentID=2 AND s.AssignmentID=a.AssignmentID;
+
+-- Number 5, list all students of a given course
+-- select s.FirstName from STUDENT s where s.StudentID in (select e.StudentID from ENROLLMENT e where e.CourseID=85675);
