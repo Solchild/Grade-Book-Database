@@ -57,3 +57,12 @@ CREATE TABLE `COURSE` (
 ) ENGINE=InnoDB;
 
 
+INSERT INTO `STUDENT` VALUES('Richard', 'Hendricks', 'Computer Science', 1234);
+INSERT INTO `STUDENT` VALUES('Jared', 'Dunn', 'Management Science', 5678);
+INSERT INTO `STUDENT` VALUES('Erlich', 'Bachman', 'Aviato', 3456);
+INSERT INTO `STUDENT` VALUES('Jimmy', 'Quoyang', 'Marine Biology', 4590);
+INSERT INTO `STUDENT` VALUES('Dinesh', 'Gilfoyle', 'Computer Engineering', 5337);
+INSERT INTO `STUDENT` VALUES('John', 'Doe', 'English', 5555);
+
+
+
