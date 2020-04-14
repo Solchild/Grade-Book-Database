@@ -231,11 +231,12 @@ INSERT INTO `SCORE` VALUES(5555, 13, 99);
 INSERT INTO `SCORE` VALUES(5337, 26, 78);
 INSERT INTO `SCORE` VALUES(5337, 28, 78);
 -- Number 4, Compute the average/highest/lowest score of an assignment;
--- select a.AssignmentID, avg(s.POINTS), max(s.POINTS), min(s.POINTS) from ASSIGNMENT a, SCORE s where a.AssignmentID=2 AND s.AssignmentID=a.AssignmentID;
+SELECT a.AssignmentID, avg(s.POINTS), max(s.POINTS), min(s.POINTS) 
+FROM ASSIGNMENT a, SCORE s WHERE a.AssignmentID=2 AND s.AssignmentID=a.AssignmentID;
 
 -- Number 5, List all students of a given course
--- select s.FirstName from STUDENT s where s.StudentID in (select e.StudentID from ENROLLMENT e where e.CourseID=85675);
--- select s.StudentID, s.FirstName from STUDENT s JOIN ENROLLMENT e where e.CourseID = 85675 and s.StudentID = e.StudentID;
+SELECT s.FirstName FROM STUDENT s WHERE s.StudentID IN (SELECT e.StudentID FROM ENROLLMENT e WHERE e.CourseID=85675);
+SELECT s.StudentID, s.FirstName FROM STUDENT s JOIN ENROLLMENT e WHERE e.CourseID = 85675 AND s.StudentID = e.StudentID;
 
 -- Number 6: List all of the students in a course and all of their scores on every assignment
 
